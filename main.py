@@ -1,16 +1,11 @@
 import streamlit as st
 import os
 import numpy as np
-from scipy.stats import norm
-import scipy.optimize as opt
 import math
 import pandas as pd
-import datetime
 import time
 from arch import arch_model
 import statsmodels.api as sm
-import matplotlib.pyplot as plt
-from numba import jit
 from sklearn.svm import SVR
 from scipy.stats import uniform as sp_rand
 from sklearn.model_selection import RandomizedSearchCV
