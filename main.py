@@ -11,9 +11,9 @@ from scipy.stats import uniform as sp_rand
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import mean_squared_error as mse
 from sklearn.metrics import mean_absolute_error as mae
-import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
+from pathlib import Path
 import warnings
 import plotly.express as px
 import plotly.graph_objects as go
@@ -30,9 +30,17 @@ st.title('Stock Volatility Clustering & Prediction')
 # Getting the list of individual stock
 path = 'datasets\\individual_stock\\'
 master_path = 'datasets\\'
-dir_list = os.listdir(path)
-dir_list = [os.path.splitext(x)[0] for x in dir_list]
-
+### CHANGE
+try:
+    dir_list = os.listdir(path)
+except:
+    dir_list = Path(__file__) / 'datasets\\individual_stock'
+    dir_list = [str(i) for i in dir_list]
+try:
+    dir_list = [os.path.splitext(x)[0] for x in dir_list]
+except:
+    dir_list = [os.path.splitext(str(x))[0] for x in dir_list]
+## CHANGE END
 # USER: Select desired Stock Ticker Symbol
 symbol = st.selectbox("Symbol: ", dir_list)
 
