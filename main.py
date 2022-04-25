@@ -57,7 +57,8 @@ stock_df = pd.read_csv(path + '{}.csv'.format(symbol))
 try:
     constituents_df = pd.read_csv(master_path + '\\constituents.csv')
 except:
-    constituents_df = pd.read_csv(Path(__file__) / 'datasets/constituents.csv')
+    master_path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/datasets/constituents.csv'
+    constituents_df = pd.read_csv(master_path)
 ## CHANGE END
 selected_stock = constituents_df[constituents_df['Symbol'] == symbol]
 stock_name = selected_stock.Name.values[0]
