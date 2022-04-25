@@ -50,7 +50,7 @@ except:
 symbol = st.selectbox("Symbol: ", dir_list)
 
 # Getting the dataset ready
-stock_df = pd.read_csv(path + '{}.csv'.format(symbol))
+stock_df = pd.read_csv(path + '/{}.csv'.format(symbol))
 
 # Importing constituents Dataframe
 ## CHANGE
