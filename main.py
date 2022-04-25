@@ -35,7 +35,7 @@ try:
     dir_list = os.listdir(path)
 except:
     dir_list = Path(__file__) / 'datasets\\individual_stock'
-    for filename in Path(__file__) / 'datasets\\individual_stock':
+    for filename in Path(__file__).parents[0] / 'datasets\\individual_stock':
         dir_list.append(str(filename))
     # dir_list = [str(i) for i in dir_list]
 try:
