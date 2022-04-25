@@ -35,7 +35,9 @@ try:
     dir_list = os.listdir(path)
 except:
     dir_list = Path(__file__) / 'datasets\\individual_stock'
-    dir_list = [str(i) for i in dir_list]
+    for filename in Path(__file__) / 'datasets\\individual_stock':
+        dir_list.append(str(filename))
+    # dir_list = [str(i) for i in dir_list]
 try:
     dir_list = [os.path.splitext(x)[0] for x in dir_list]
 except:
@@ -48,7 +50,12 @@ symbol = st.selectbox("Symbol: ", dir_list)
 stock_df = pd.read_csv(path + '{}.csv'.format(symbol))
 
 # Importing constituents Dataframe
-constituents_df = pd.read_csv(master_path + 'constituents.csv')
+## CHANGE
+try:
+    constituents_df = pd.read_csv(master_path + '\\constituents.csv')
+except:
+    constituents_df = pd.read_csv(Path(__file__) / 'datasets/constituents.csv')
+## CHANGE END
 selected_stock = constituents_df[constituents_df['Symbol'] == symbol]
 stock_name = selected_stock.Name.values[0]
 stock_sector = selected_stock.Sector.values[0]
