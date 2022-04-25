@@ -35,7 +35,7 @@ master_path = 'datasets\\'
 try:
     path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/individual_stock'
     dir_list = os.listdir(path)
-except:
+except FileNotFoundError:
     dir_list = Path(__file__).parents[0] / 'datasets/individual_stock'
     st.write(dir_list)
     # for filename in Path(__file__).parents[0] / 'datasets\\individual_stock':
@@ -56,8 +56,8 @@ stock_df = pd.read_csv(path + '/{}.csv'.format(symbol))
 ## CHANGE
 try:
     constituents_df = pd.read_csv(master_path + '\\constituents.csv')
-except:
-    master_path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/datasets/constituents.csv'
+except FileNotFoundError:
+    master_path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/constituents.csv'
     constituents_df = pd.read_csv(master_path)
 ## CHANGE END
 selected_stock = constituents_df[constituents_df['Symbol'] == symbol]
