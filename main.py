@@ -14,6 +14,7 @@ from sklearn.metrics import mean_absolute_error as mae
 from tensorflow import keras
 from tensorflow.keras import layers
 from pathlib import Path
+from glob import glob
 import warnings
 import plotly.express as px
 import plotly.graph_objects as go
@@ -32,12 +33,13 @@ path = 'datasets\\individual_stock\\'
 master_path = 'datasets\\'
 ### CHANGE
 try:
+    path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/individual_stock'
     dir_list = os.listdir(path)
 except:
     dir_list = Path(__file__).parents[0] / 'datasets/individual_stock'
     st.write(dir_list)
-    for filename in Path(__file__).parents[0] / 'datasets\\individual_stock':
-        dir_list.append(str(filename))
+    # for filename in Path(__file__).parents[0] / 'datasets\\individual_stock':
+    #     dir_list.append(str(filename))
     # dir_list = [str(i) for i in dir_list]
 try:
     dir_list = [os.path.splitext(x)[0] for x in dir_list]
