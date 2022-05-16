@@ -23,10 +23,15 @@ In this project, percentage of weekly returns of each stock was calculated. Next
 ![image](https://user-images.githubusercontent.com/41315903/168650632-43f209ff-c95d-4963-a32d-1e74545c7a0e.png)
 
 The below figure shows the weekly percentage of returns for stocks grouped together in a cluster.
+
 a. Cluster 1 – 305 stocks (e.g. Bank of America, AT&T).
+
 b. Cluster 2 – 6 stocks (e.g. AMD, Tesla).
+
 c. Cluster 3 – 40 stocks (e.g. Apple, Moderna).
+
 d. Cluster 4 – 1 stock (NVIDIA).
+
 e. Cluster 5 – 152 stocks (e.g. Google, Texas Instruments).
 
 ![image](https://user-images.githubusercontent.com/41315903/168651002-0713adea-ee85-4c74-b441-7bbe9228433a.png)
