@@ -1,4 +1,6 @@
-# Stock-Portfolio-Diversification-Using-Clustering-and-Volatility-Prediction
+# Stock Volatility Prediction
+
+Link to project dashboard: (Please use Firefox) - https://share.streamlit.io/kedarghule/stock-portfolio-diversification-using-clustering-and-volatility-prediction/main/main.py
 
 ## Problem Statement
 How can we diversify an investor’s portfolio such that it can be profitable and has stocks with a security worth investing? How do we present information to an investor looking to diversify their stock portfolio, maximizing their profits such that they can study the company and make an informed decision before investing?
@@ -44,4 +46,4 @@ Modelling volatility is essentially modelling uncertainty. When forecasting vola
 
 ![image](https://user-images.githubusercontent.com/41315903/168651257-c1b6b2c6-3dc0-4f62-9d73-ca9c8bc37590.png)
 
-The result of this section can be viewed on the models deployed on Streamlit (Please use Firefox) - https://share.streamlit.io/kedarghule/stock-portfolio-diversification-using-clustering-and-volatility-prediction/main/main.py
+
