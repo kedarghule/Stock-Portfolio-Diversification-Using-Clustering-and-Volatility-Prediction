@@ -1,6 +1,7 @@
 # Stock Volatility Prediction
 
-Link to project dashboard: (Please use Firefox) - https://share.streamlit.io/kedarghule/stock-portfolio-diversification-using-clustering-and-volatility-prediction/main/main.py
+Link to project dashboard: (Please use Firefox) - [https://share.streamlit.io/kedarghule/stock-portfolio-diversification-using-clustering-and-volatility-prediction/main/main.py
+](https://kedarghule-stock-portfolio-diversification-using-cl-main-29m6qy.streamlit.app/)
 
 ## Problem Statement
 How can we diversify an investor’s portfolio such that it can be profitable and has stocks with a security worth investing? How do we present information to an investor looking to diversify their stock portfolio, maximizing their profits such that they can study the company and make an informed decision before investing?
