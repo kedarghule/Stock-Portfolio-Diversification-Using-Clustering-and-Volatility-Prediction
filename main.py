@@ -38,10 +38,10 @@ try:
 except FileNotFoundError:
     dir_list = Path(__file__).parents[0] / 'datasets/individual_stock'
     st.write(dir_list)
-    print(dir_list)
     # for filename in Path(__file__).parents[0] / 'datasets\\individual_stock':
     #     dir_list.append(str(filename))
     # dir_list = [str(i) for i in dir_list]
+print(dir_list)
 try:
     dir_list = [os.path.splitext(x)[0] for x in dir_list]
 except:
