@@ -33,32 +33,33 @@ path = 'datasets\\individual_stock\\'
 master_path = 'datasets\\'
 ### CHANGE
 try:
-    path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/individual_stock'
+    path = '/workspaces/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/individual_stock'
     dir_list = os.listdir(path)
 except FileNotFoundError:
-    dir_list = Path(__file__).parents[0] / 'datasets/individual_stock'
-    st.write(dir_list)
+    dir_list = os.listdir(os.getcwd()+"/datasets/individual_stock")
+    #st.write(dir_list)
     # for filename in Path(__file__).parents[0] / 'datasets\\individual_stock':
     #     dir_list.append(str(filename))
     # dir_list = [str(i) for i in dir_list]
-print(dir_list)
+#print("!!!*********Dir List is : ", os.listdir(os.getcwd()+"/datasets/individual_stock"))
 try:
     dir_list = [os.path.splitext(x)[0] for x in dir_list]
 except:
     dir_list = [os.path.splitext(str(x))[0] for x in dir_list]
+#print("DIR LIST IS: ", dir_list)
 ## CHANGE END
 # USER: Select desired Stock Ticker Symbol
 symbol = st.selectbox("Symbol: ", dir_list)
 
 # Getting the dataset ready
-stock_df = pd.read_csv(path + '/{}.csv'.format(symbol))
+stock_df = pd.read_csv(os.getcwd()+"/datasets/individual_stock/{}.csv".format(symbol))
 
 # Importing constituents Dataframe
 ## CHANGE
 try:
     constituents_df = pd.read_csv(master_path + '\\constituents.csv')
 except FileNotFoundError:
-    master_path = '/app/stock-portfolio-diversification-using-clustering-and-volatility-prediction/datasets/constituents.csv'
+    master_path = os.getcwd()+"/datasets/constituents.csv"
     constituents_df = pd.read_csv(master_path)
 ## CHANGE END
 selected_stock = constituents_df[constituents_df['Symbol'] == symbol]
